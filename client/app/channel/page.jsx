@@ -3,7 +3,7 @@ import ChannelForm from "@/components/channel_form/ChannelForm";
 
 const ChannelPage = () => {
   return (
-    <div className="flex justify-center items-center w-full h-screen">
+    <div>
       <ChannelForm />
     </div>
   );

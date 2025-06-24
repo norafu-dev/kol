@@ -26,7 +26,12 @@ export default function RootLayout({ children }) {
       <body className={`${dmMono.variable} ${dmSans.variable} antialiased`}>
         <Toaster />
         <Navbar />
-        {children}
+        <div
+          className="mt-14 flex justify-center"
+          style={{ height: "calc(100vh - 56px)" }}
+        >
+          {children}
+        </div>
       </body>
     </html>
   );
