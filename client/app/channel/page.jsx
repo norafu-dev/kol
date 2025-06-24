@@ -4,7 +4,8 @@ import ChannelForm from "@/components/channel_form/ChannelForm";
 const ChannelPage = () => {
   return (
     <div>
-      <ChannelForm />
+      {/* <ChannelForm /> */}
+      所有频道概况
     </div>
   );
 };
