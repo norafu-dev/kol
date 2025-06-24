@@ -1,9 +1,5 @@
-import ChannelForm from "@/components/channel_form/ChannelForm";
-
 export default function Home() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <ChannelForm />
-    </div>
+    <div className="flex justify-center items-center w-full h-screen">首页</div>
   );
 }

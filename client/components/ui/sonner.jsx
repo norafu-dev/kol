@@ -16,12 +16,6 @@ const Toaster = ({ ...props }) => {
         "--normal-bg": "var(--popover)",
         "--normal-text": "var(--popover-foreground)",
         "--normal-border": "var(--border)",
-        "--success-bg": "var(--success)",
-        "--success-text": "var(--success-foreground)",
-        "--success-border": "var(--success-border)",
-        "--error-bg": "var(--error)",
-        "--error-text": "var(--error-foreground)",
-        "--error-border": "var(--error-border)",
       }}
       {...props}
     />

@@ -39,7 +39,6 @@ const ChannelForm = () => {
 
   // 2. Define a submit handler.
   const onSubmit = async (values) => {
-    console.log(values);
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/channel/create`,
@@ -59,7 +58,7 @@ const ChannelForm = () => {
         throw new Error(errorData.message);
       }
     } catch (error) {
-      toast.warning(error.message);
+      toast.error(error.message);
     }
     form.reset();
   };
@@ -72,7 +71,7 @@ const ChannelForm = () => {
           name="channelId"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Channel ID</FormLabel>
+              <FormLabel>频道 ID</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -85,7 +84,7 @@ const ChannelForm = () => {
           name="channelName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Channel Name</FormLabel>
+              <FormLabel>频道名称</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -98,7 +97,7 @@ const ChannelForm = () => {
           name="channelPicture"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Channel Picture</FormLabel>
+              <FormLabel>频道图片</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -106,7 +105,7 @@ const ChannelForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">提交</Button>
       </form>
     </Form>
   );

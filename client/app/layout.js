@@ -1,15 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import Navbar from "@/components/navbar/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmMono = DM_Mono({
+  weight: ["300", "400", "500"],
   subsets: ["latin"],
+  variable: "--font-dm-mono",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
+  variable: "--font-dm-sans",
 });
 
 export const metadata = {
@@ -20,10 +23,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${dmMono.variable} ${dmSans.variable} antialiased`}>
         <Toaster />
+        <Navbar />
         {children}
       </body>
     </html>

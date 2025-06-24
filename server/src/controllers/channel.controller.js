@@ -1,7 +1,6 @@
 import Channel from "../models/channel.model.js";
 
 const createChannel = async (req, res) => {
-  console.log(req.body);
   const { channelId, channelName, channelPicture } = req.body;
 
   try {
