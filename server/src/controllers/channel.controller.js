@@ -6,11 +6,14 @@ const createChannel = async (req, res) => {
 
   try {
     // 字段校验
-    const valid = channelId && channelName;
-    !valid && res.status(400).json({ message: "All fields are required" });
+    if (!channelId || !channelName) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
 
     const channel = await Channel.findOne({ channelId });
-    channel && res.status(400).json({ message: "Channel already exists" });
+    if (channel) {
+      return res.status(400).json({ message: "Channel already exists" });
+    }
 
     const newChannel = new Channel({
       channelId,

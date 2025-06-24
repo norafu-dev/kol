@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   channelId: z.string().min(1, {
@@ -51,14 +52,16 @@ const ChannelForm = () => {
         }
       );
 
-      if (res.status !== 201) {
-        throw new Error(res.message);
+      if (res.status === 201) {
+        toast.success("Channel created successfully");
+      } else {
+        const errorData = await res.json();
+        throw new Error(errorData.message);
       }
-
-      form.reset();
     } catch (error) {
-      console.log(error);
+      toast.warning(error.message);
     }
+    form.reset();
   };
 
   return (
