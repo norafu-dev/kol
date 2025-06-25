@@ -105,7 +105,9 @@ const ChannelForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">提交</Button>
+        <Button type="submit" className="w-full">
+          提交
+        </Button>
       </form>
     </Form>
   );
